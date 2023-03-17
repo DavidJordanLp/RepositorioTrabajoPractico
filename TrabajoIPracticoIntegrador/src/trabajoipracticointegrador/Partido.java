@@ -1,8 +1,8 @@
 package trabajoipracticointegrador;
 
 public class Partido extends Equipo{
-  protected Equipo equipo1; // creo un argumento e instancio el objeto padre Equipo para equipo N° 1
-  protected Equipo equipo2; // creo un argumento e instancio el objeto padre Equipo para equipo N° 2
+  protected Equipo equipo1; // creo un argumento e instancio el objeto padre Equipo para equipo N? 1
+  protected Equipo equipo2; // creo un argumento e instancio el objeto padre Equipo para equipo N? 2
  
   protected int golesEquipo1; // creo variable para goles equipo 1
   protected int golesEquipo2; // creo variable para goles equipo 2
@@ -19,6 +19,8 @@ public class Partido extends Equipo{
         this.golesEquipo2 = golesEquipo2;
     }
 
+    
+    // getters y setters
     public int getGolesEquipo1() {
         return golesEquipo1;
     }
@@ -34,6 +36,7 @@ public class Partido extends Equipo{
     public void setGolesEquipo2(int golesEquipo2) {
         this.golesEquipo2 = golesEquipo2;
     }
+    //
     
     
   
