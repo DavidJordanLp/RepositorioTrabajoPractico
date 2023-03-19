@@ -1,10 +1,27 @@
 package tpi;
 
 public class ResultadoEnum {
-    Partido partido = new Partido();
-    
-    public String resultEnum() {
-        return partido.resultado();
+        String resultado = "";
+
+    public ResultadoEnum() {
     }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+        
+    
+        
+        
+        
+    
+
+    
+    
+
+    
+
+    
+    
   
 }

@@ -10,24 +10,40 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Partido {
+        ResultadoEnum result = new ResultadoEnum();
         private String equipo1;
         private String equipo2;
         private int golesEquipo1;
         private int golesEquipo2;
         
-        String archivoResultado = "resultados.csv";
-        String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivoResultado;
+        String archivo = "resultados.csv";
+        String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
         Path ruta = Paths.get(nombreArchivo);
         
-        private void getArchivoResultado() {
+        protected void getArchivoResultado() {
              try {
 	            List<String> lineas = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
 	            for (String linea : lineas) {
-	                String[] textoSeparado = linea.split(";");
-                        equipo1 = textoSeparado[0];
-                        golesEquipo1 = parseInt(textoSeparado[1]);
-                        golesEquipo2 = parseInt(textoSeparado[2]);
-                        equipo2 = textoSeparado[3];
+	                String[] textoSeparado = linea.split(", ");
+                         for (String item : textoSeparado) {
+                            String[] aa = item.split(";");
+                            equipo1 = aa[0];
+                            golesEquipo1 = parseInt(aa[1]);
+                            golesEquipo2 = parseInt(aa[2]);
+                            equipo2 = aa[3];
+                            if(golesEquipo1==golesEquipo2) {
+                                result.setResultado("Empate");
+                            } else {
+                                if(golesEquipo1>golesEquipo2) {
+                                    result.setResultado("Ganador");
+                                } else {
+                                    result.setResultado("Perdedor");
+                                }
+                            }
+                            
+                          
+                            System.out.println(equipo1+" | "+golesEquipo1+" | "+golesEquipo2+" | "+equipo2);
+                         }
                     }
 	        } catch (IOException e) {
 	            e.printStackTrace();
@@ -36,15 +52,7 @@ public class Partido {
         
         protected String resultado() {
             String resultado = null;
-            if(golesEquipo1==golesEquipo2) {
-                resultado = "Empate";
-            } else {
-                if(golesEquipo1>golesEquipo2) {
-                    resultado = "Ganador";
-                } else {
-                    resultado = "Perdedor";
-                }
-            }
+            
             return resultado;
         }
         

@@ -10,28 +10,43 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Pronostico {
+        ResultadoEnum result = new ResultadoEnum();
+        
         int puntos = 0 ;
         ResultadoEnum resultadoEnum = new ResultadoEnum();
         public int consultarPronostico() throws FileNotFoundException{
                 int resultado = 0;
-                String archivoResultado = "pronostico.csv";
-                String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivoResultado;
+                String archivo = "pronostico.csv";
+                String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
 	        Path ruta = Paths.get(nombreArchivo);
 	        
 	        try {
 	            List<String> lineas = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
 	            for (String linea : lineas) {
-	                String[] textoSeparado = linea.split(";");
-                        if(textoSeparado[1].length()>0){
-                            puntos = 2;
-                        } else {
-                            if(textoSeparado[2].length()>0) {
-                                puntos = 1;
+	                String[] textoSeparado = linea.split(", ");
+                        for (String item : textoSeparado) {
+                            String[] aa = item.split(";");
+                            
+                            if(aa[1].length()>0 && result.resultado=="Ganador") {
+                                
+                                puntos++;
                             } else {
-                                puntos = 0;
+                                if(aa[2].length()>0 && result.resultado=="Empate") {
+                                    puntos++;
+                                }else{
+                                   if(aa[3].length()>0 && result.resultado=="Perdedor") {
+                                    puntos++;
+                                   }
+                                }
+                                
+                                resultado = puntos;
                             }
-                            resultado = puntos;
+                            
+                          
                         }
+                        
+                        
+                        
                         
 	            }
 	        } catch (IOException e) {
