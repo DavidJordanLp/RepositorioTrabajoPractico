@@ -1,6 +1,8 @@
 package trabajoipracticointegrador;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -47,11 +49,12 @@ public class Partido extends Equipo{
     //
     
     public void resultados() throws IOException {
-        
-         String resultado = null;
-         String archivo = "resultados.csv";
-         String ruta = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoIPracticoIntegrador\\recursos\\";
-         String nombreArchivo = ruta+archivo;
+        String resultado = null;
+        String archivo = "resultados.csv";
+        String ruta = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoIPracticoIntegrador_1\\recursos\\";
+        String nombreArchivo = ruta+archivo;
+     /*   FileReader fr = new FileReader(nombreArchivo);
+        BufferedReader bf = new BufferedReader(fr);*/
 	 
         //resultado = "Equipo 1;Cant. Goles 1;Cant. Goles 2;Equipo 2\n";
          resultado = equipo1.getNombre()+";"+golesEquipo1+";"+golesEquipo2+";"+equipo2.getNombre();
@@ -60,16 +63,16 @@ public class Partido extends Equipo{
          if(!getArchivo.exists()){
             Files.writeString(Paths.get(ruta), resultado);
          } else {
-            if(getArchivo.length()>2){
-                System.out.println(getArchivo.length());
-                } else {
-                if(getArchivo.length()==0) {
+            if(getArchivo.length()==0){
                     salidaArchivo.write(resultado);
+                
                 } else {
                     salidaArchivo.write("\n"+resultado);
-                }
-                salidaArchivo.close();
-            }
+                } 
+                
+                
+            
          }
+                    salidaArchivo.close();
     }
 }

@@ -1,22 +1,10 @@
-
 package trabajoipracticointegrador;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-
-
-
-public class TrabajoIPracticoIntegrador {
-
-    public static void main(String[] args) throws IOException {
-        /*
-        Consultas cons1 = new Consultas();
-        cons1.cons1();
-          */      
-        // escribe equipos y goles
-        
-           Scanner ent = new Scanner(System.in); //metodo Scanner
+public class EjecutarPartido {
+    protected void ejecutar() {
+         Scanner ent = new Scanner(System.in); //metodo Scanner
             Partido partido1 = new Partido(); //instancio objeto partido
             partido1.equipo1 = new Equipo(); //mediante objeto partido creo un objeto equipo1 de Equipo
             partido1.equipo2 = new Equipo(); //mediante objeto partido creo un objeto equipo2 de Equipo
@@ -34,12 +22,6 @@ public class TrabajoIPracticoIntegrador {
             partido1.setGolesEquipo2(ent.nextInt());
 
             System.out.println();
-
-
-            partido1.resultados();
-        
-        
     }
-
     
 }
