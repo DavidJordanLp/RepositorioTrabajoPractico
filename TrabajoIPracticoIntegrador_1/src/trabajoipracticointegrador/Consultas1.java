@@ -15,7 +15,7 @@ import java.util.List;
 	public  class Consultas1 {
             public String cons1() throws FileNotFoundException{
               String resultado = null;
-              String nombreArchivo = "C:\\Users\\lucas\\OneDrive\\Escritorio\\Curso Java\\resultadosCSV.csv"; //Ruta de acceso al excel a leer
+                String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\resultados.csv";
 	        Path ruta = Paths.get(nombreArchivo);
 	        
 	        try {

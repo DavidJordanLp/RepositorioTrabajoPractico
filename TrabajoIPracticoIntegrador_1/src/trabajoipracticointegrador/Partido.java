@@ -28,7 +28,6 @@ public class Partido extends Equipo{
         this.golesEquipo1 = golesEquipo1;
         this.golesEquipo2 = golesEquipo2;
     }
-
     
     // getters y setters
     public int getGolesEquipo1() {
@@ -53,26 +52,19 @@ public class Partido extends Equipo{
         String archivo = "resultados.csv";
         String ruta = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoIPracticoIntegrador_1\\recursos\\";
         String nombreArchivo = ruta+archivo;
-     /*   FileReader fr = new FileReader(nombreArchivo);
-        BufferedReader bf = new BufferedReader(fr);*/
-	 
-        //resultado = "Equipo 1;Cant. Goles 1;Cant. Goles 2;Equipo 2\n";
-         resultado = equipo1.getNombre()+";"+golesEquipo1+";"+golesEquipo2+";"+equipo2.getNombre();
-         File getArchivo = new File(nombreArchivo);
-         FileWriter salidaArchivo = new FileWriter(getArchivo, true);
-         if(!getArchivo.exists()){
-            Files.writeString(Paths.get(ruta), resultado);
-         } else {
-            if(getArchivo.length()==0){
-                    salidaArchivo.write(resultado);
-                
-                } else {
-                    salidaArchivo.write("\n"+resultado);
-                } 
-                
-                
-            
-         }
-                    salidaArchivo.close();
+    
+        resultado = equipo1.getNombre()+";"+golesEquipo1+";"+golesEquipo2+";"+equipo2.getNombre();
+        File getArchivo = new File(nombreArchivo);
+        FileWriter salidaArchivo = new FileWriter(getArchivo, true);
+        if(!getArchivo.exists()){
+           Files.writeString(Paths.get(ruta), resultado);
+        } else {
+           if(getArchivo.length()==0){
+               salidaArchivo.write(resultado);
+           } else {
+               salidaArchivo.write("\n"+resultado);
+           } 
+        }
+        salidaArchivo.close();
     }
 }
