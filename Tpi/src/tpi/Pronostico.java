@@ -10,10 +10,8 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Pronostico {
-        ResultadoEnum result = new ResultadoEnum();
-        
+        ResultadoEnum resutResultadoEnum = new ResultadoEnum();
         int puntos = 0 ;
-        ResultadoEnum resultadoEnum = new ResultadoEnum();
         public int consultarPronostico() throws FileNotFoundException{
                 int resultado = 0;
                 String archivo = "pronostico.csv";
@@ -25,33 +23,26 @@ public class Pronostico {
 	            for (String linea : lineas) {
 	                String[] textoSeparado = linea.split(", ");
                         for (String item : textoSeparado) {
-                            String[] aa = item.split(";");
+                            String[] datosPronostico = item.split(";");
                             
-                            if(aa[1].length()>0 && result.resultado=="Ganador") {
-                                
+                            if(datosPronostico[1].length()>0) {
                                 puntos++;
                             } else {
-                                if(aa[2].length()>0 && result.resultado=="Empate") {
+                                if(datosPronostico[2].length()>0) {
                                     puntos++;
                                 }else{
-                                   if(aa[3].length()>0 && result.resultado=="Perdedor") {
+                                   if(datosPronostico[3].length()>0) {
                                     puntos++;
                                    }
                                 }
-                                
                                 resultado = puntos;
                             }
-                            
-                          
+
                         }
-                        
-                        
-                        
-                        
-	            }
+                    }
 	        } catch (IOException e) {
 	            e.printStackTrace();
-	        }
+            }
                 return resultado;
             }
         

@@ -17,7 +17,7 @@ import java.util.List;
             String cel2;
             String cel3;
             
-            public String cons1() throws FileNotFoundException{
+            public String consultarPronostico() throws FileNotFoundException{
                 
                 
               String resultado = "";
