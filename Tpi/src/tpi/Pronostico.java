@@ -24,7 +24,7 @@ public class Pronostico {
 	                String[] textoSeparado = linea.split(", ");
                         for (String item : textoSeparado) {
                             String[] datosPronostico = item.split(";");
-                            
+                            // va a sumar 2 puntos debido a que en pronostico se complen dos condiciones
                             if(datosPronostico[1].length()>0) {
                                 puntos++;
                             } else {
