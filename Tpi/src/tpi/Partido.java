@@ -21,7 +21,7 @@ public class Partido {
         
         
         String archivo = "resultados.csv";
-        String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
+        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\RepositorioTrabajoPractico\\Tpi\\recursos\\"+archivo;
         Path ruta = Paths.get(nombreArchivo);
         
         protected void partido() {

@@ -22,7 +22,7 @@ import java.util.List;
                 
               String resultado = "";
                 String archivoResultado = "pronostico.csv";
-                String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivoResultado;
+                String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\RepositorioTrabajoPractico\\Tpi\\recursos\\"+archivoResultado;
 	        Path ruta = Paths.get(nombreArchivo);
 	        
 	        try {

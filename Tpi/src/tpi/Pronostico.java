@@ -11,13 +11,11 @@ import java.util.List;
 
 public class Pronostico {
         public int consultarPronostico() throws FileNotFoundException{
-        
-        
         int puntos = 0 ;
         
             int resultado = 0;
                 String archivo = "pronostico.csv";
-                String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
+                String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\RepositorioTrabajoPractico\\Tpi\\recursos\\"+archivo;
 	        Path ruta = Paths.get(nombreArchivo);
 	        
 	        try {
