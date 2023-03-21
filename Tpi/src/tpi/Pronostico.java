@@ -10,10 +10,12 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Pronostico {
-        ResultadoEnum resutResultadoEnum = new ResultadoEnum();
-        int puntos = 0 ;
         public int consultarPronostico() throws FileNotFoundException{
-                int resultado = 0;
+        
+        
+        int puntos = 0 ;
+        
+            int resultado = 0;
                 String archivo = "pronostico.csv";
                 String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
 	        Path ruta = Paths.get(nombreArchivo);
@@ -44,8 +46,9 @@ public class Pronostico {
 	            e.printStackTrace();
             }
                 return resultado;
-            }
         
+            }
+            
         
 
 }
