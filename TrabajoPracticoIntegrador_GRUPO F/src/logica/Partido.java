@@ -21,9 +21,9 @@ public class Partido {
     protected List<String> addPartido () {
         List<String> arrayResultado = new ArrayList();
         List<String> arrayRonda = new ArrayList();
-        String resultado = null;
         String archivo = "resultados.csv";
-        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\RepositorioTrabajoPractico\\Tpi\\recursos\\"+archivo;
+        //cambiar ruta por ruta propia
+        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\Tpi\\recursos\\"+archivo;
         Path ruta = Paths.get(nombreArchivo);
         try {
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
