@@ -19,7 +19,7 @@ public class Pronostico {
     public int getPronostico() throws IOException {
         String archivo = "pronostico.csv";
         //cambiar ruta por ruta propia
-        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador_GRUPO F\\recursos\\"+archivo;
+        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\repositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
         File archi = new File(nombreArchivo);
 	Path ruta = Paths.get(nombreArchivo);
         List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);

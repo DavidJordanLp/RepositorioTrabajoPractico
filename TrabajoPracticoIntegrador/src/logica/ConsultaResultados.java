@@ -16,7 +16,7 @@ public class ConsultaResultados {
         public void getArchivo() throws IOException {
             String archivo = "resultados.csv";
             //cambiar ruta por ruta propia
-            String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador_GRUPO F\\recursos\\"+archivo;
+            String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\repositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
             Path ruta = Paths.get(nombreArchivo);
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             System.out.println("Resultados");
