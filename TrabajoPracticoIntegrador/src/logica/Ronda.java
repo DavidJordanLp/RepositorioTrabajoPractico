@@ -8,11 +8,7 @@ public class Ronda {
     String nro;
     List<String> partidos = new ArrayList();
 
-    public int getPuntos() {
-        
-        return puntos;
+    public void setPartidos(List<String> partidos) {
+        this.partidos = partidos;
     }
-    
-    
-    
- }
+  }

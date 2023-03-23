@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Partido {
     ResultEnum resultadoEnum = new ResultEnum();
+    Ronda ronda = new Ronda();
     private String equipo1;
     private String equipo2;
     private int golesEquipo1;
@@ -19,22 +20,27 @@ public class Partido {
     private int puntos = 0;
     
     protected List<String> addPartido () {
+        
         List<String> arrayResultado = new ArrayList();
-        List<String> arrayRonda = new ArrayList();
-        String resultado = null;
+        
         String archivo = "resultados.csv";
-        String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
+        //cambiar ruta por ruta propia
+        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador_GRUPO F\\recursos\\"+archivo;
         Path ruta = Paths.get(nombreArchivo);
         try {
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             for (String f : files) {
-                String[] celda = f.split(", ");
-                for (String item : celda) {
-                    String[] aa = item.split(";");
-                    equipo1 = aa[0];
-                    golesEquipo1 = parseInt(aa[1]);
-                    golesEquipo2 = parseInt(aa[2]);
-                    equipo2 = aa[3];
+                String[] fila = f.split(", ");
+                for (String celda : fila) {
+                    String[] textoCelda = celda.split(";");
+                    equipo1 = textoCelda[0];
+                    golesEquipo1 = parseInt(textoCelda[1]);
+                    golesEquipo2 = parseInt(textoCelda[2]);
+                    equipo2 = textoCelda[3];
+                    
+                    ronda.partidos.add(textoCelda[0]+";"+textoCelda[1]+";"+textoCelda[2]+";"+textoCelda[3]);
+                    
+                    
                     if(golesEquipo1==golesEquipo2) {
                         resultadoEnum.setEmpate("Empate");
                         arrayResultado.add(resultadoEnum.getEmpate());
@@ -56,7 +62,10 @@ public class Partido {
         } catch (IOException e) {
             e.printStackTrace();
     }
-         return arrayResultado;
+    
+    return arrayResultado;
 }
+    
+        
     
 }

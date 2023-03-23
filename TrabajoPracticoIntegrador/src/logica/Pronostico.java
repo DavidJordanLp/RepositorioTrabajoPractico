@@ -18,25 +18,10 @@ public class Pronostico {
     
     public int getPronostico() throws IOException {
         String archivo = "pronostico.csv";
-        String nombreArchivo = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
+        //cambiar ruta por ruta propia
+        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador_GRUPO F\\recursos\\"+archivo;
         File archi = new File(nombreArchivo);
 	Path ruta = Paths.get(nombreArchivo);
-        try 
-        {
-            if(!archi.exists()){
-                System.out.println("sss");
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        
-        
-            
-        
-        
-       
         List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
         for(String f: files) {
             String fila[] = f.split(", ");
@@ -61,8 +46,14 @@ public class Pronostico {
             indice++;
         }
         ronda.puntos = puntos;
+        
         return puntos;
     }
+    
+    
+    
+    
+    
     
     
     
