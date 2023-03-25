@@ -24,10 +24,9 @@ public class Partido {
         
         List<String> arrayResultado = new ArrayList();
         
-        String archivo = "resultados.csv";
         //cambiar ruta por ruta propia
-        String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
-        Path ruta = Paths.get(nombreArchivo);
+        
+        Path ruta = Paths.get(rutaRecursos.getRutaResultados());
         try {
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             for (String f : files) {

@@ -20,10 +20,7 @@ public class ConsultaPronostico {
         private String empate;
         
         public void getArchivo() throws IOException {
-            String archivo = "pronostico.csv";
-            //cambiar ruta por ruta propia
-            String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
-            Path ruta = Paths.get(nombreArchivo);
+            Path ruta = Paths.get(rutaRecursos.getRutaPronostico());
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             System.out.println("Pronostico del jugador");
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - -");
@@ -52,11 +49,8 @@ public class ConsultaPronostico {
                     }
                     
                     System.out.println(item[0]+"|"+ganadorEquipo1+"|"+empate+"|"+ganadorEquipo2+"|"+item[4]);
-                    
-                    
-                    
                 }
-            }           
+            }          
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - -");
                 
                

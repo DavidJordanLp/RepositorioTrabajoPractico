@@ -18,15 +18,11 @@ public class Pronostico {
     private int indice = 0;
     
     public int getPronostico() throws IOException {
-        String archivo = "pronostico.csv";
-        //cambiar ruta por ruta propia
-        String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
-        File archi = new File(nombreArchivo);
-	Path ruta = Paths.get(nombreArchivo);
+      Path ruta = Paths.get(rutaRecursos.getRutaPronostico());
         List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
         for(String f: files) {
-            String fila[] = f.split(", ");
-            for(String celda: fila) {
+           String fila[] = f.split(", ");
+           for(String celda: fila) {
                 String b[] = celda.split(";");
                 if(b[2].length()>0 && getPartido.addPartido().get(indice)=="Empate") {
                     puntos++;
@@ -43,11 +39,11 @@ public class Pronostico {
                       }
                   }
                 }
+
             }
             indice++;
         }
         ronda.puntos = puntos;
-        
         return puntos;
     }
     
