@@ -3,8 +3,8 @@ import java.io.File;
 
 public class RutaRecursos {
     
-        protected String rutaPronostico = "C:\\Users\\djord\\Documents\\RepositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\pronostico.csv";
-        protected String rutaResultados = "C:\\Users\\djord\\Documents\\RepositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\resultados.csv";
+        protected String rutaPronostico = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador\\recursos\\pronostico.csv";
+        protected String rutaResultados = "C:\\Users\\djord\\Documents\\NetBeansProjects\\TrabajoPracticoIntegrador\\recursos\\resultados.csv";
         
 
     protected String getRutaPronostico() {
