@@ -24,17 +24,17 @@ public class Pronostico {
            String fila[] = f.split(", ");
            for(String celda: fila) {
                 String b[] = celda.split(";");
-                if(b[2].length()>0 && getPartido.addPartido().get(indice)=="Empate") {
+                if(b[3].length()>0 && getPartido.addPartido().get(indice)=="Empate") {
                     puntos++;
                 }
                 else 
                 {
-                  if(b[1].length()>0 && getPartido.addPartido().get(indice)=="Ganador") {
+                  if(b[2].length()>0 && getPartido.addPartido().get(indice)=="Ganador") {
                       puntos++;
                   } 
                   else 
                   {
-                      if(b[3].length()>0 && getPartido.addPartido().get(indice)=="Perdedor") {
+                      if(b[4].length()>0 && getPartido.addPartido().get(indice)=="Perdedor") {
                           puntos++;
                       }
                   }

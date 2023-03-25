@@ -32,10 +32,10 @@ public class Partido {
                 String[] fila = f.split(", ");
                 for (String celda : fila) {
                     String[] textoCelda = celda.split(";");
-                    equipo1 = textoCelda[0];
-                    golesEquipo1 = parseInt(textoCelda[1]);
-                    golesEquipo2 = parseInt(textoCelda[2]);
-                    equipo2 = textoCelda[3];
+                    equipo1 = textoCelda[1];
+                    golesEquipo1 = parseInt(textoCelda[2]);
+                    golesEquipo2 = parseInt(textoCelda[3]);
+                    equipo2 = textoCelda[4];
                     
                     
                     if(golesEquipo1==golesEquipo2) {

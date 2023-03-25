@@ -28,21 +28,21 @@ public class ConsultaPronostico {
                 String[] celda = f.split(", ");
                 for(String textoCelda:celda) {
                     String[] item = textoCelda.split(";");
-                    if(item[2].length()>0) {
+                    if(item[3].length()>0) {
                         ganadorEquipo1 = "-------";
                         empate = "Empate";
                         ganadorEquipo2 = "-------";
                     }
                     else
                     {
-                        if(item[1].length()>0) {
+                        if(item[2].length()>0) {
                             ganadorEquipo1 = "Ganador";
                             empate = "-------";
                             ganadorEquipo2 = "-------";
                         }
                         else
                         {
-                            if(item[3].length()>0) {
+                            if(item[4].length()>0) {
                             ganadorEquipo1 = "-------";
                             empate = "-------";
                             ganadorEquipo2 = "Ganador";
@@ -55,7 +55,7 @@ public class ConsultaPronostico {
                         
                     }
                     
-                    System.out.println(item[0]+"|"+ganadorEquipo1+"|"+empate+"|"+ganadorEquipo2+"|"+item[4]);
+                    System.out.println(item[1]+"|"+ganadorEquipo1+"|"+empate+"|"+ganadorEquipo2+"|"+item[5]);
                 }
             }          
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - -");
