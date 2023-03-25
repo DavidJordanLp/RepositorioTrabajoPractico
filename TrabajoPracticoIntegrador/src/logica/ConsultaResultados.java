@@ -11,12 +11,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ConsultaResultados {
+        RutaRecursos rutaRecursos = new RutaRecursos();
         Scanner ent = new Scanner(System.in);
         
         public void getArchivo() throws IOException {
             String archivo = "resultados.csv";
             //cambiar ruta por ruta propia
-            String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\repositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
+            
+            String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
             Path ruta = Paths.get(nombreArchivo);
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             System.out.println("Resultados");

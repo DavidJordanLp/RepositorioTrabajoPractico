@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Pronostico {
+    RutaRecursos rutaRecursos = new RutaRecursos();
     Partido getPartido = new Partido();
     Ronda ronda = new Ronda();
     
@@ -19,7 +20,7 @@ public class Pronostico {
     public int getPronostico() throws IOException {
         String archivo = "pronostico.csv";
         //cambiar ruta por ruta propia
-        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\repositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
+        String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
         File archi = new File(nombreArchivo);
 	Path ruta = Paths.get(nombreArchivo);
         List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);

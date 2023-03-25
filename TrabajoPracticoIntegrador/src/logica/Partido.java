@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Partido {
+    RutaRecursos rutaRecursos = new RutaRecursos();
     ResultEnum resultadoEnum = new ResultEnum();
     Ronda ronda = new Ronda();
     private String equipo1;
@@ -25,7 +26,7 @@ public class Partido {
         
         String archivo = "resultados.csv";
         //cambiar ruta por ruta propia
-        String nombreArchivo = "C:\\Users\\David\\Documents\\NetBeansProjects\\repositorioTrabajoPractico\\TrabajoPracticoIntegrador\\recursos\\"+archivo;
+        String nombreArchivo = rutaRecursos.getRutaRecursos()+archivo;
         Path ruta = Paths.get(nombreArchivo);
         try {
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);

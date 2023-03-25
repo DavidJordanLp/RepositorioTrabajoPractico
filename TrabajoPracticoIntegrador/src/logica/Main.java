@@ -5,7 +5,13 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-       
+        RutaRecursos rutaRecursos = new RutaRecursos();
+        
+        if(rutaRecursos.consultarArchivos()==false) 
+        {   
+            System.exit(0);
+        }
+        
         ConsultaResultados r = new ConsultaResultados();
         r.getArchivo();
         System.out.println();
