@@ -42,10 +42,17 @@ public class ConsultaPronostico {
                         }
                         else
                         {
+                            if(item[3].length()>0) {
                             ganadorEquipo1 = "-------";
                             empate = "-------";
                             ganadorEquipo2 = "Ganador";
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
+                        
                     }
                     
                     System.out.println(item[0]+"|"+ganadorEquipo1+"|"+empate+"|"+ganadorEquipo2+"|"+item[4]);

@@ -16,8 +16,6 @@ public class ConsultaResultados {
         
         public void getArchivo() throws IOException {
             String archivo = "resultados.csv";
-            //cambiar ruta por ruta propia
-            
             Path ruta = Paths.get(rutaRecursos.getRutaResultados());
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
             System.out.println("Resultados");

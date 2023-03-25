@@ -19,13 +19,12 @@ public class Partido {
     private int golesEquipo1;
     private int golesEquipo2;
     private int puntos = 0;
+    private int indice = 0;
+    
     
     protected List<String> addPartido () {
         
         List<String> arrayResultado = new ArrayList();
-        
-        //cambiar ruta por ruta propia
-        
         Path ruta = Paths.get(rutaRecursos.getRutaResultados());
         try {
             List<String> files = Files.readAllLines(ruta, StandardCharsets.ISO_8859_1);
@@ -37,8 +36,6 @@ public class Partido {
                     golesEquipo1 = parseInt(textoCelda[1]);
                     golesEquipo2 = parseInt(textoCelda[2]);
                     equipo2 = textoCelda[3];
-                    
-                    ronda.partidos.add(textoCelda[0]+";"+textoCelda[1]+";"+textoCelda[2]+";"+textoCelda[3]);
                     
                     
                     if(golesEquipo1==golesEquipo2) {
@@ -59,8 +56,16 @@ public class Partido {
                     }
                 }
             }
+            indice++;
+            if(indice==files.size()) {
+                if(ronda.partidos.size()<1) {
+                    files.add(0, "1");
+                    ronda.partidos = files;
+                }
+                    
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+        e.printStackTrace();
     }
     
     return arrayResultado;
