@@ -127,5 +127,6 @@ public class Tpi {
         
         System.out.println("El jugador consigio un total de "+textPunto+" en esta ronda.");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.exit(0);
     }
 }
