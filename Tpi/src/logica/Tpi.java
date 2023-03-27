@@ -79,7 +79,7 @@ public class Tpi {
                 if(f[2].length()>0 || f[3].length()>0 || f[4].length()>0)
                 {
                     System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-                    System.out.println("Resultado y Resultado: "+i);
+                    System.out.println("Resultado y Pronostico: "+i);
                     System.out.println(partidos.get(i-1).getEquipo1().getNombre()+" "+partidos.get(i-1).getGolesEquipo1()+"-"+partidos.get(i-1).getGolesEquipo2()+" "+partidos.get(i-1).getEquipo2().getNombre());
                     
                     if(partidos.get(i-1).getGolesEquipo1()==partidos.get(i-1).getGolesEquipo2() && f[3].length()>0) 
