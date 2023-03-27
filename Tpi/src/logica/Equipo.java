@@ -13,16 +13,16 @@ public class Equipo {
         return nombre;
     }
 
-    public void setNombre(String unNombre) {
-        this.nombre = unNombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String unaDescripcion) {
-        this.descripcion = unaDescripcion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

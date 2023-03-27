@@ -22,6 +22,7 @@ public class Tpi {
     Ronda ronda = new Ronda();
     int puntos = 0;
     
+   
     
     Path rutaResultados = Paths.get(rutaArchivos.getRutaResultados());
     List<String> filasResultado = Files.readAllLines(rutaResultados, StandardCharsets.ISO_8859_1);
@@ -33,7 +34,6 @@ public class Tpi {
                 int golesEquipo1 = Integer.parseInt(f[2]);
                 int golesEquipo2 = Integer.parseInt(f[3]);
                 Equipo equipo2 = new Equipo(f[4]);
-                //System.out.println(f[0]+": |"+f[1]+"| "+golesEquipo1+" - "+golesEquipo2+" |"+f[4]+"|");
                 Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2);
                 partidos.add(partido);
             }
@@ -71,7 +71,9 @@ public class Tpi {
                     empate = "-------";
                     ganaEquipo2 = ResultEnum.Ganador.toString();
                 }
-      
+                ronda.partidos = new Partido[i];
+                ronda.partidos[i-1] = partidos.get(i-1);
+                
                 String equipo1 = f[1];
                 String equipo2 = f[5];
                 if(f[2].length()>0 || f[3].length()>0 || f[4].length()>0)
@@ -121,6 +123,7 @@ public class Tpi {
         {
             textPunto = ronda.puntos(puntos)+" punto";
         }
+        
         
         System.out.println("El jugador consigio un total de "+textPunto+" en esta ronda.");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");

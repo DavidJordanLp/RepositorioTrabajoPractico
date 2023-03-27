@@ -2,16 +2,16 @@ package logica;
 
 public class Ronda {
     private String nro;
-    private Partido[] partidos;
+     Partido[] partidos;
 
     public Ronda() {
     }
-    
-    public Ronda(String nro) {
+
+    public Ronda(String nro, Partido[] partidos) {
         this.nro = nro;
         this.partidos = partidos;
     }
-
+    
     public String getNro() {
         return nro;
     }
@@ -23,10 +23,9 @@ public class Ronda {
     public Partido[] getPartidos() {
         return partidos;
     }
+    
+    
 
-    public void setPartidos(Partido[] partidos) {
-        this.partidos = partidos;
-    }
     
     public int puntos(int puntos) {
         int punto = 0;
