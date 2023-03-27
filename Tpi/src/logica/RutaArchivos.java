@@ -14,7 +14,6 @@ public class RutaArchivos {
     }
     
     protected void consultarArchivos() {
-        boolean retornar = false;
         File rutaPronostico = new File(this.rutaPronostico);
         File rutaResultados = new File(this.rutaResultados);
         if(!rutaPronostico.exists() || !rutaResultados.exists())
