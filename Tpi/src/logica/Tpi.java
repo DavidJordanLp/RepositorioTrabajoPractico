@@ -1,3 +1,6 @@
+//
+
+
 package logica;
 
 import static com.sun.tools.attach.VirtualMachine.list;
@@ -22,11 +25,10 @@ public class Tpi {
     Ronda ronda = new Ronda();
     int puntos = 0;
     
-   
-    
+    //resultados
     Path rutaResultados = Paths.get(rutaArchivos.getRutaResultados());
     List<String> filasResultado = Files.readAllLines(rutaResultados, StandardCharsets.ISO_8859_1);
-        for (int i = 0; i < filasResultado.size(); i++) {
+        for (int i = 0; i < filasResultado.size()-1; i++) {
             if(i!=0) {
                 String f[] = filasResultado.get(i).split(";");
                 int id = Integer.parseInt(f[0]);
@@ -35,16 +37,18 @@ public class Tpi {
                 int golesEquipo2 = Integer.parseInt(f[3]);
                 Equipo equipo2 = new Equipo(f[4]);
                 Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2);
+                ronda.partidos = new Partido[filasResultado.size()-1];
+                ronda.partidos[i] = partido;
                 partidos.add(partido);
             }
         }
         
+    // pronostico
     Path rutaPronosticos = Paths.get(rutaArchivos.getRutaPronostico());
     List<String> filasPronosticos = Files.readAllLines(rutaPronosticos, StandardCharsets.ISO_8859_1);
     
         System.out.println();
-        
-        for (int i = 0; i < filasPronosticos.size(); i++) {
+        for (int i = 0; i < filasPronosticos.size()-1; i++) {
             if(i!=0) {
                 String f[] = filasPronosticos.get(i).split(";");
                 int id = Integer.parseInt(f[0]);
@@ -60,7 +64,6 @@ public class Tpi {
                 }
                 
                 if(f[3].length()>0) {
-                
                     ganaEquipo1 = "-------";
                     empate = ResultEnum.Empate.toString();
                     ganaEquipo2 = "-------";
@@ -71,15 +74,11 @@ public class Tpi {
                     empate = "-------";
                     ganaEquipo2 = ResultEnum.Ganador.toString();
                 }
-                ronda.partidos = new Partido[i];
-                ronda.partidos[i-1] = partidos.get(i-1);
                 
-                String equipo1 = f[1];
-                String equipo2 = f[5];
                 if(f[2].length()>0 || f[3].length()>0 || f[4].length()>0)
                 {
                     System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-                    System.out.println("Resultado y Pronostico: "+i);
+                    System.out.println("Resultado y Pronosito: "+i);
                     System.out.println(partidos.get(i-1).getEquipo1().getNombre()+" "+partidos.get(i-1).getGolesEquipo1()+"-"+partidos.get(i-1).getGolesEquipo2()+" "+partidos.get(i-1).getEquipo2().getNombre());
                     
                     if(partidos.get(i-1).getGolesEquipo1()==partidos.get(i-1).getGolesEquipo2() && f[3].length()>0) 
@@ -104,10 +103,10 @@ public class Tpi {
                             }
                         }
                     }
+                    
                     System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                     System.out.println();
                     ronda.setNro("1");
-                    
                     ronda.puntos(prono.puntos(puntos));
                 } 
             }
@@ -127,6 +126,12 @@ public class Tpi {
         
         System.out.println("El jugador consigio un total de "+textPunto+" en esta ronda.");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println();
+        System.out.println("Trabajo practico realizado por \nMaria Esther Rivarola  \n" +
+                            "Leonardo Pedalino  \n" +
+                            "Gloria Elisabet Pérez  \n" +
+                            "federico ferrari \n" +
+                            "David Jordan \n");
         System.exit(0);
     }
 }
