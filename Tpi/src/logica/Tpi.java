@@ -96,7 +96,7 @@ public class Tpi {
                             if(partidos.get(i-1).getGolesEquipo1()<partidos.get(i-1).getGolesEquipo2() && f[4].length()>0) 
                             {
                         System.out.println("|"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"|"+f[5]+"| (Acertó pronóstico, gana un(1) punto.)");
-                        prono.puntos(puntos++);
+                        prono.puntos(puntos++); 
                             }
                             else
                             {
