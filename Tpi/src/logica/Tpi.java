@@ -124,7 +124,7 @@ public class Tpi {
         }
         
         
-        System.out.println("El jugador consigio un total de "+textPunto+" en esta ronda.");
+        System.out.println("El jugador obtuvo un total de "+textPunto+" en esta ronda.");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
         System.out.println();
         System.out.println("Trabajo practico realizado por \nMaria Esther Rivarola  \n" +
