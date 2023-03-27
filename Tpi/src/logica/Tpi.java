@@ -19,6 +19,7 @@ public class Tpi {
     List<Partido> partidos = new ArrayList();
     List<Pronostico> pronostico = new ArrayList();
     Pronostico prono = new Pronostico();
+    Ronda ronda = new Ronda();
     int puntos = 0;
     
     
@@ -75,45 +76,52 @@ public class Tpi {
                 String equipo2 = f[5];
                 if(f[2].length()>0 || f[3].length()>0 || f[4].length()>0)
                 {
-                    System.out.println("(Resultado)");
-                    System.out.println(partidos.get(i-1).getId()+": "+partidos.get(i-1).getEquipo1().getNombre()+" "+partidos.get(i-1).getGolesEquipo1()+"-"+partidos.get(i-1).getGolesEquipo2()+" "+partidos.get(i-1).getEquipo2().getNombre());
-                    System.out.println("(Pronostico)");
+                    System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                    System.out.println("Resultado y Resultado: "+i);
+                    System.out.println(partidos.get(i-1).getEquipo1().getNombre()+" "+partidos.get(i-1).getGolesEquipo1()+"-"+partidos.get(i-1).getGolesEquipo2()+" "+partidos.get(i-1).getEquipo2().getNombre());
+                    
                     if(partidos.get(i-1).getGolesEquipo1()==partidos.get(i-1).getGolesEquipo2() && f[3].length()>0) 
                     {
-                        System.out.println(f[0]+": |"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"| "+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
+                        System.out.println("|"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"| "+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
                         prono.puntos(puntos++);
                 
                     } else {
                         if(partidos.get(i-1).getGolesEquipo1()>partidos.get(i-1).getGolesEquipo2() && f[2].length()>0) 
                         {
-                        System.out.println(f[0]+": |"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"| "+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
+                        System.out.println("|"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"| "+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
                         prono.puntos(puntos++);
                         } else {
                             if(partidos.get(i-1).getGolesEquipo1()<partidos.get(i-1).getGolesEquipo2() && f[4].length()>0) 
                             {
-                        System.out.println(f[0]+": |"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"|"+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
+                        System.out.println("|"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"|"+f[5]+"| (Acertó pronostico, gana un(1) punto.)");
                         prono.puntos(puntos++);
                             }
                             else
                             {
-                                System.out.println(f[0]+": |"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"|"+f[5]+"| (No acertó)");
+                                System.out.println("|"+f[1]+"|"+ganaEquipo1+"|"+empate+"|"+ganaEquipo2+"|"+f[5]+"| (No acertó)");
                             }
                         }
                     }
+                    System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                    System.out.println();
+                    ronda.setNro("1");
+                    
+                    ronda.puntos(prono.puntos(puntos));
                 } 
             }
         }
-        System.out.println();
+        
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
         String textPunto = null;
         if(prono.puntos(puntos)>1)
         {
-            textPunto = prono.puntos(puntos)+" puntos";
+            textPunto = ronda.puntos(puntos)+" puntos";
         }
         else
         {
-            textPunto = prono.puntos(puntos)+" punto";
+            textPunto = ronda.puntos(puntos)+" punto";
         }
+        
         System.out.println("El jugador consigio un total de "+textPunto+" en esta ronda.");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
     }
