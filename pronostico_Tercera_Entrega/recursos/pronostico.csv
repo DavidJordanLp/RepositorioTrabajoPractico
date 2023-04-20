@@ -1,0 +1,33 @@
+Jugador;equipo1;ganaEquipo1;empate;ganaEquipo2;equipo2
+David;Argentina;X;;;Saudi Arabia
+David;Mexico;X;;;Poland
+David;Poland;X;;;Saudi Arabia
+David;Argentina;;X;;Mexico
+David;France;X;;;Australia
+David;Morocco;;X;;Croatia
+David;Germany;X;;;Japan
+David;Spain;;;;Costa Rica
+Carina;Argentina;;;X;Saudi Arabia
+Carina;Mexico;X;;;Poland
+Carina;Poland;X;;;Saudi Arabia
+Carina;Argentina;X;;;Mexico
+Carina;France;X;;;Australia
+Carina;Morocco;;;X;Croatia
+Carina;Germany;;;X;Japan
+Carina;Spain;X;;;Costa Rica
+Lucas;Argentina;;;X;Saudi Arabia
+Lucas;Mexico;;X;;Poland
+Lucas;Poland;X;;;Saudi Arabia
+Lucas;Argentina;X;;;Mexico
+Lucas;France;X;;;Australia
+Lucas;Morocco;;;X;Croatia
+Lucas;Germany;X;;;Japan
+Lucas;Spain;;X;;Costa Rica
+Luis;Argentina;X;;;Saudi Arabia
+Luis;Mexico;;;X;Poland
+Luis;Poland;;X;;Saudi Arabia
+Luis;Argentina;X;;;Mexico
+Luis;France;X;;;Australia
+Luis;Morocco;;X;;Croatia
+Luis;Germany;;;X;Japan
+Luis;Spain;X;;;Costa Rica
